@@ -10,5 +10,5 @@ To evaluate the program, we use the diff utility to compare the output of thr pr
 expected output.
 ~~~
 python3 parser.py grammar-expr < input-expr.in1 > out
-diff out output-expr
+diff out output-expr.out1
 ~~~
