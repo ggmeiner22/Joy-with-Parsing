@@ -52,15 +52,39 @@ def create_cfgs(grammar_expr_file):
     return non_terminals, terminals, productions
 
 
+def check_expression(tokens, productions, start_symbol, terminals):
+    """
+
+    :param tokens:
+    :param productions:
+    :param start_symbol:
+    :param terminals:
+    :return:
+    """
+
+
 def main():
     grammar_expr_file = sys.argv[1]  # takes in the grammar
 
     # Creates a list of terminals, non-terminals, and the productions dict
     non_terminals, terminals, productions = create_cfgs(grammar_expr_file)
 
-    print(non_terminals)
-    print(terminals)
-    print(productions)
+    #print(non_terminals)
+    #print(terminals)
+    #print(productions)
 
+    # Read input from stdin
+    input_string = sys.stdin.read().strip()
+    tokens = input_string.split()
+
+    # print(input_string)
+    # print(tokens)
+
+    start_symbol = non_terminals[0]  # First non-terminal is the start symbol
+    # print(start_symbol)
+    if check_expression(tokens, productions, start_symbol, terminals):
+        print("string is valid")
+    else:
+        print("string is invalid")
 
 main()
